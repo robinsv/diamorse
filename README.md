@@ -100,13 +100,13 @@ The following commandline executable programs provide lower level functionality 
 
 NOTE: 3D visualisation is not currently provided as part of diamorse.  
 
-* `diamorse $ ./bin/VectorField tomofloat_input.nc [OUTPUT]`
+* `diamorse $ ./bin/VectorField tomo_float_input.nc [OUTPUT]`
 
-  OUTPUT defaults to vectorfield_input_GVF.nc
+  OUTPUT defaults to vector_field_input_GVF.nc
 
-* `diamorse $ ./bin/Simplify tomofloat_input.nc vectorfield_input_GVF.nc [OUTPUT]`
+* `diamorse $ ./bin/Simplify tomo_float_input.nc vector_field_input_GVF.nc [OUTPUT]`
 
-  OUTPUT defaults to vectorfield_input_GVF_SMP.nc
+  OUTPUT defaults to vector_field_input_GVF_SMP.nc
 
   OPTION: -p <float> (default = 1.0) persistence limit for feature cancellation
   
@@ -114,17 +114,17 @@ NOTE: 3D visualisation is not currently provided as part of diamorse.
   
   OPTION: -t <float> value of a level threshold to preserve
 
-* `diamorse $ ./bin/PersistencePairs tomofloat_input.nc vectorfield_input_GVF_SMP.nc [OUTPUT]`
+* `diamorse $ ./bin/PersistencePairs tomo_float_input.nc vector_field_input_GVF_SMP.nc [OUTPUT]`
 
   OUTPUT defaults to persistence_input_GVF_SMP_PP.txt
 
-* `diamorse $ ./bin/Skeleton tomofloat_input.nc vectorfield_input_GVF_SMP.nc [OUTPUT]`
+* `diamorse $ ./bin/Skeleton tomo_float_input.nc vector_field_input_GVF_SMP.nc [OUTPUT]`
 
   OUTPUT defaults to segmented_input_GVF_SMP_SKL.nc
 
   OPTION: -t <float> (default = 0.0) level set threshold 
 
-* `diamorse $ ./bin/Pores tomofloat_input.nc vectorfield_input_GVF_SMP.nc [OUTPUT]`
+* `diamorse $ ./bin/Pores tomo_float_input.nc vector_field_input_GVF_SMP.nc [OUTPUT]`
 
   OUTPUT defaults to labels_input_GVF_SMP_POR.nc
 
