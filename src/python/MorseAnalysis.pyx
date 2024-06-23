@@ -6,6 +6,11 @@
 # Morse vector field, Morse chain complex and cell labellings.
 #
 # Olaf Delgado-Friedrichs feb 14
+# Vanessa Robins updated june 24
+
+# distutils: language = c++
+# distutils: define_macros=NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION
+
 
 from cython.operator cimport dereference as deref
 from libc.stdint cimport uint8_t, uint32_t
@@ -100,7 +105,7 @@ cdef class VectorField:
     def __cinit__(self,
                   VolumeImage volume,
                   float threshold = -1,
-                  string filename = ''
+                  string filename = b''
                   ):
         self._volume = volume
         if filename.size() > 0:
