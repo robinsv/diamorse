@@ -101,7 +101,7 @@ public:
         Vertices vertices(complex_.xdim(), complex_.ydim(), complex_.zdim());
 
         Value val = scalars_.get(vertices(v, 0));
-        for (size_t i = 1; i < vertices.count(v); ++i)
+        for (int i = 1; i < vertices.count(v); ++i)
             val = std::max(val, scalars_.get(vertices(v, i)));
 
         return val;
@@ -407,7 +407,7 @@ class MorseData
                         if (c != b and active.at(b) and seen.count(c) == 0)
                         {
                             seen.insert(c);
-                            for (size_t j = 0; j < vertices.count(c); ++j)
+                            for (int j = 0; j < vertices.count(c); ++j)
                                 paths_.set(vertices(c, j), true);
                             queue.push(c);
                         }
@@ -559,7 +559,7 @@ public:
         for (size_t i = 0; i < tmp.size(); ++i)
         {
             std::pair<Cell, int> p = tmp.at(i);
-            for (size_t j = 0; j < p.second; ++j)
+            for (int j = 0; j < p.second; ++j)
                 result.push_back(p.first);
         }
 

@@ -8,5 +8,7 @@ extensions = [
 ]
 
 setup(
-    ext_modules=cythonize(extensions),
+    ext_modules=cythonize(extensions,compiler_directives={'language_level' : '3'}),
+    extra_compile_args=["-g"],
+    extra_link_args=["-g"]
 )

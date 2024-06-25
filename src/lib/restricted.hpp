@@ -63,6 +63,7 @@ public:
             if (good_->at(I_(id, i)) and ++m == n)
                 return I_(id, i);
         assert(false);
+        return I_(id,0);
     }
 };
 

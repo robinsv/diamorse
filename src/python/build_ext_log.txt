@@ -1,0 +1,116 @@
+(diamorsepy) vbr110@RSPE-056361 python % python setup.py build_ext --inplace
+Compiling MorseAnalysis.pyx because it changed.
+[1/1] Cythonizing MorseAnalysis.pyx
+/opt/anaconda3/envs/diamorsepy/lib/python3.10/site-packages/Cython/Compiler/Main.py:381: FutureWarning: Cython directive 'language_level' not set, using '3str' for now (Py3). This has changed from earlier releases! File: /Users/vbr110/Projects/CompTop/diamorse/src/python/MorseAnalysis.pyx
+  tree = Parsing.p_module(s, pxd, full_module_name)
+running build_ext
+building 'MorseAnalysis' extension
+creating build
+creating build/temp.macosx-11.1-arm64-cpython-310
+clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /opt/anaconda3/envs/diamorsepy/include -arch arm64 -fPIC -O2 -isystem /opt/anaconda3/envs/diamorsepy/include -arch arm64 -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -I/opt/anaconda3/envs/diamorsepy/lib/python3.10/site-packages/numpy/core/include -I../lib -I/opt/anaconda3/envs/diamorsepy/include/python3.10 -c MorseAnalysis.cpp -o build/temp.macosx-11.1-arm64-cpython-310/MorseAnalysis.o
+In file included from MorseAnalysis.cpp:1295:
+../lib/ImageAnalysis.hpp:613:31: warning: unused variable 'complex' [-Wunused-variable]
+        CubicalComplex const& complex = imageData_.complex_;
+                              ^
+In file included from MorseAnalysis.cpp:1295:
+In file included from ../lib/ImageAnalysis.hpp:35:
+In file included from ../lib/volume_io.hpp:29:
+../lib/netcdf.hpp:1098:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+    }
+    ^
+../lib/netcdf.hpp:1112:32: note: in instantiation of member function 'anu_am::netcdf::NCFile<anu_am::netcdf::FileBuffer>::makeAcc' requested here
+            _accessors[name] = makeAcc(_info.variable(name), start);
+                               ^
+../lib/volume_io.hpp:165:30: note: in instantiation of member function 'anu_am::netcdf::NCFile<anu_am::netcdf::FileBuffer>::NCFile' requested here
+    NCFile<FileBuffer> const file(data);
+                             ^
+In file included from MorseAnalysis.cpp:1295:
+../lib/ImageAnalysis.hpp:104:30: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+        for (size_t i = 1; i < vertices.count(v); ++i)
+                           ~ ^ ~~~~~~~~~~~~~~~~~
+MorseAnalysis.cpp:6227:44: note: in instantiation of member function 'anu_am::diamorse::ImageData<float>::cellValue' requested here
+          __pyx_t_18 = __pyx_v_self->_img->cellValue(__pyx_v_cell);
+                                           ^
+In file included from MorseAnalysis.cpp:1295:
+In file included from ../lib/ImageAnalysis.hpp:23:
+In file included from ../lib/chainComplexExtraction.hpp:20:
+../lib/restricted.hpp:66:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+    }
+    ^
+../lib/restricted.hpp:89:30: note: in instantiation of member function 'anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::Facets>::operator()' requested here
+            size_t const b = I(a, i);
+                             ^
+../lib/restricted.hpp:130:9: note: in instantiation of function template specialization 'anu_am::diamorse::mark<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>::Vectors, anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::Facets> >' requested here
+        mark(downstreamTargets.at(i), result, true, coV, rcoI);
+        ^
+../lib/chainComplexExtraction.hpp:76:12: note: in instantiation of function template specialization 'anu_am::diamorse::connectingPaths<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>::Vectors, anu_am::diamorse::Facets>' requested here
+    return connectingPaths(complex.cellIdLimit(),
+           ^
+../lib/simplification.hpp:218:9: note: in instantiation of function template specialization 'anu_am::diamorse::connectingPaths<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>, anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>::Vectors, anu_am::diamorse::Facets>' requested here
+        connectingPaths(complex, field, V, coV, I, coI);
+        ^
+../lib/ImageAnalysis.hpp:184:9: note: in instantiation of function template specialization 'anu_am::diamorse::simplify<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>, anu_am::diamorse::WithArgument<anu_am::diamorse::Maxima<anu_am::diamorse::VertexMap<anu_am::diamorse::CubicalComplex, float>, anu_am::diamorse::Vertices> >, anu_am::diamorse::MayCancel<anu_am::diamorse::VertexMap<anu_am::diamorse::CubicalComplex, float>, anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap> > >' requested here
+        simplify(complex,
+        ^
+../lib/ImageAnalysis.hpp:200:17: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::runSimplify' requested here
+                runSimplify();
+                ^
+../lib/ImageAnalysis.hpp:521:16: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::field' requested here
+        return field().V().defined(v) ? field().getDirection(v) : 0;
+               ^
+MorseAnalysis.cpp:7564:46: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::cellDirection' requested here
+          __pyx_t_18 = __pyx_v_self->_morse->cellDirection(__pyx_v_cell);
+                                             ^
+In file included from MorseAnalysis.cpp:1295:
+In file included from ../lib/ImageAnalysis.hpp:23:
+In file included from ../lib/chainComplexExtraction.hpp:20:
+../lib/restricted.hpp:66:5: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+    }
+    ^
+../lib/restricted.hpp:89:30: note: in instantiation of member function 'anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::Facets> >::operator()' requested here
+            size_t const b = I(a, i);
+                             ^
+../lib/restricted.hpp:130:9: note: in instantiation of function template specialization 'anu_am::diamorse::mark<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>::Vectors, anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::Facets> > >' requested here
+        mark(downstreamTargets.at(i), result, true, coV, rcoI);
+        ^
+../lib/chainComplexExtraction.hpp:76:12: note: in instantiation of function template specialization 'anu_am::diamorse::connectingPaths<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>::Vectors, anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::Facets> >' requested here
+    return connectingPaths(complex.cellIdLimit(),
+           ^
+../lib/simplification.hpp:269:22: note: in instantiation of function template specialization 'anu_am::diamorse::connectingPaths<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>, anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>::Vectors, anu_am::diamorse::RestrictedIncidences<anu_am::diamorse::Facets> >' requested here
+            marked = connectingPaths(complex, field, V, coV, rI, rcoI);
+                     ^
+../lib/ImageAnalysis.hpp:184:9: note: in instantiation of function template specialization 'anu_am::diamorse::simplify<anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap>, anu_am::diamorse::WithArgument<anu_am::diamorse::Maxima<anu_am::diamorse::VertexMap<anu_am::diamorse::CubicalComplex, float>, anu_am::diamorse::Vertices> >, anu_am::diamorse::MayCancel<anu_am::diamorse::VertexMap<anu_am::diamorse::CubicalComplex, float>, anu_am::diamorse::MorseVectorField<anu_am::diamorse::PackedMap> > >' requested here
+        simplify(complex,
+        ^
+../lib/ImageAnalysis.hpp:200:17: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::runSimplify' requested here
+                runSimplify();
+                ^
+../lib/ImageAnalysis.hpp:521:16: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::field' requested here
+        return field().V().defined(v) ? field().getDirection(v) : 0;
+               ^
+MorseAnalysis.cpp:7564:46: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::cellDirection' requested here
+          __pyx_t_18 = __pyx_v_self->_morse->cellDirection(__pyx_v_cell);
+                                             ^
+In file included from MorseAnalysis.cpp:1295:
+../lib/ImageAnalysis.hpp:410:50: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+                            for (size_t j = 0; j < vertices.count(c); ++j)
+                                               ~ ^ ~~~~~~~~~~~~~~~~~
+../lib/ImageAnalysis.hpp:541:16: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::paths' requested here
+        return paths().get(v);
+               ^
+MorseAnalysis.cpp:9760:46: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::isOnPath' requested here
+          __pyx_t_18 = __pyx_v_self->_morse->isOnPath(__pyx_v_cell);
+                                             ^
+In file included from MorseAnalysis.cpp:1295:
+../lib/ImageAnalysis.hpp:562:34: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+            for (size_t j = 0; j < p.second; ++j)
+                               ~ ^ ~~~~~~~~
+MorseAnalysis.cpp:10212:56: note: in instantiation of member function 'anu_am::diamorse::MorseData<float>::chainComplexBoundary' requested here
+    __pyx_t_2 = __pyx_cur_scope->__pyx_v_self->_morse->chainComplexBoundary(__pyx_cur_scope->__pyx_v_v);
+                                                       ^
+7 warnings generated.
+creating build/lib.macosx-11.1-arm64-cpython-310
+clang++ -bundle -undefined dynamic_lookup -Wl,-rpath,/opt/anaconda3/envs/diamorsepy/lib -L/opt/anaconda3/envs/diamorsepy/lib -Wl,-rpath,/opt/anaconda3/envs/diamorsepy/lib -L/opt/anaconda3/envs/diamorsepy/lib build/temp.macosx-11.1-arm64-cpython-310/MorseAnalysis.o -o build/lib.macosx-11.1-arm64-cpython-310/MorseAnalysis.cpython-310-darwin.so
+ld: warning: duplicate -rpath '/opt/anaconda3/envs/diamorsepy/lib' ignored
+copying build/lib.macosx-11.1-arm64-cpython-310/MorseAnalysis.cpython-310-darwin.so -> 
+(diamorsepy) vbr110@RSPE-056361 python % 

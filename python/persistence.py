@@ -34,8 +34,8 @@ def fromText(input):
             birth, death, dim, v0, v1, v2, w0, w1, w2 = text.split()
             wt = 0
 
-        v = map(float, [v0, v1, v2])
-        w = map(float, [w0, w1, w2]) if w0 != '-' else None
+        v = list(map(float, [v0, v1, v2]))
+        w = list(map(float, [w0, w1, w2])) if w0 != '-' else None
         dim = int(dim)
         birth = float(birth)
         death = float(death)
@@ -140,11 +140,11 @@ def printStats(pairs):
             cum += counts[x]
             counts[x] = cum
 
-        print ("# Numbers of cells of dimension " + str(d) +
-               " by lower persistence thresholds")
+        print(("# Numbers of cells of dimension " + str(d) +
+               " by lower persistence thresholds"))
         for x in sorted(counts.keys()):
-            print "%10.5f %6d" % (x, counts[x])
-        print
+            print("%10.5f %6d" % (x, counts[x]))
+        print()
 
 
 if __name__ == '__main__':
@@ -185,7 +185,7 @@ if __name__ == '__main__':
 
     if options.betti:
         for i in range(len(xth)):
-            print "# The %f-persistent %s Betti numbers:" % (threshold, xth[i])
+            print("# The %f-persistent %s Betti numbers:" % (threshold, xth[i]))
             for (val, count) in bettiNumbers(pairs, i, threshold):
-                print "%10.5f %6d" % (val, count)
-            print
+                print("%10.5f %6d" % (val, count))
+            print()

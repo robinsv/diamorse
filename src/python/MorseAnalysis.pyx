@@ -62,9 +62,13 @@ cdef class VolumeImage:
 
     def __cinit__(self, string filename):
         self._img = new ImageData[float](filename)
+#        if self._img is NULL:
+#           raise MemoryError()
  
     def __dealloc__(self):
         del self._img
+#       if self._img is not NULL:
+#           del self._img
 
     def data(self):
         cdef int xdim = self._img.xdim()
@@ -104,7 +108,7 @@ cdef class VectorField:
 
     def __cinit__(self,
                   VolumeImage volume,
-                  float threshold = -1,
+                  float threshold = -1.0,
                   string filename = b''
                   ):
         self._volume = volume

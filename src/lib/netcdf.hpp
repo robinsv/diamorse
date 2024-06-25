@@ -1094,6 +1094,7 @@ class NCFile
         case NC_DOUBLE: return makeAccessor<NC_DOUBLE>(dims, _buf, start);
         default:
             assert(false);
+            return Accessor(); // Return a default-constructed Accessor
         }
     }
 
